@@ -63,7 +63,8 @@ and region.
 3. Also at install, the Slovak contacts that have a postal code are linked to the locality of the
    code: directly on a small database, or by the scheduled action **Slovakia: link contacts to the
    city of their ZIP**, in batches, on a large one (it deactivates itself when done). The contact
-   persons of a company are not touched by this automatic link: they take the address of the company.
+   persons of a company (the child contacts of type *Contact*) are not touched by this automatic link: they
+   take the address of the company; the delivery and invoice addresses of the company are processed.
 4. There is nothing to configure.
 
 ## 6. Usage flow
@@ -122,7 +123,7 @@ a region), in **Contacts**, in list view, select the contacts and open
 - **Careful:** select the companies, not the contact persons of a company. The action writes the
   address on the selected contact, and a contact person takes the address of its company, so a
   contact person updated by hand copies its address on the company (the automatic link at install
-  and the scheduled action skip the contact persons).
+  and the scheduled action skip the contact persons, not the delivery and invoice addresses).
 
 ![Contacts list with 7 contacts selected, among them Príklad Bratislava s.r.o., Príklad Nitra s.r.o., Zákazník Košice, Zákazník Prešov and Zákazník Žilina in Slovakia; the Actions menu is open and contains the row Slovakia: set city from ZIP](../static/description/en/04_actiune_contacte_existente.png)
 
@@ -184,6 +185,7 @@ The module shows no error messages of its own. The frequent situations:
 | After the postal code, the city stays empty but the region is filled in | the code is shared by several localities | pick the city from the list (type the code or the name in the **City** field) |
 | After the postal code, neither the city nor the region is filled in | the code is not in the list, is not written with 5 digits, or covers localities of two regions (4 codes) and the locality name typed on the contact matches none of them | check the code (5 digits, `NNN NN`); pick the city from the list, and the region is filled in with it |
 | The **City** field is a list, not a text field | Slovakia asks for the city from the list after the module is installed | pick the city from the list; a missing locality can be added by an administrator in **Cities** |
+| Some contacts stay unlinked after the install or the action | a contact that cannot be written (a constraint of another module on data that was already wrong) is skipped, and the linking goes on with the others | the skipped contact is logged as a warning `l10n_sk_zip: contact … not relinked` in the server log: fix its data and run **Actions → Slovakia: set city from ZIP** on it |
 | Imported contacts have no region | the import does not run the postal code rules | run **Actions → Slovakia: set city from ZIP** on the imported contacts |
 | The **City** list shows "Create …" and "Create and edit…" | the list allows creating a new locality | do not create localities from the contact: pick an existing one; a missing locality is added by the administrator in **Cities**, with its postal code and region |
 | You do not see the **Cities** menu | the menu **Contacts → Configuration** is only for **Administration: Settings** | ask the administrator to look it up |
