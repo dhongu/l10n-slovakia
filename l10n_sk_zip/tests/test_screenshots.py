@@ -111,10 +111,10 @@ class TestSkZipScreenshots(ScreenshotCase or object):
         slovakia = env.ref("base.sk")
         Partner = env["res.partner"]
         cls.partner_bratislava = Partner.create(
-            {"name": "Príklad Bratislava s.r.o.", "is_company": True, "country_id": slovakia.id, "street": "Obchodná 7"}
+            {"name": "Príklad Bratislava s.r.o.", "country_id": slovakia.id, "street": "Obchodná 7"}
         )
         cls.partner_nitra = Partner.create(
-            {"name": "Príklad Nitra s.r.o.", "is_company": True, "country_id": slovakia.id, "street": "Štefánikova 12"}
+            {"name": "Príklad Nitra s.r.o.", "country_id": slovakia.id, "street": "Štefánikova 12"}
         )
         # contacte importate cu orașul scris liber, fără localitate din listă și fără provincie
         cls.imported = Partner.with_context(tracking_disable=True).create(
