@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="state_sk_bc" model="res.country.state">
+        <field name="country_id" ref="base.sk" />
+        <field name="code">BC</field>
+        <field name="name">Banskobystrický kraj</field>
+    </record>
+    <record id="state_sk_bl" model="res.country.state">
+        <field name="country_id" ref="base.sk" />
+        <field name="code">BL</field>
+        <field name="name">Bratislavský kraj</field>
+    </record>
+    <record id="state_sk_ki" model="res.country.state">
+        <field name="country_id" ref="base.sk" />
+        <field name="code">KI</field>
+        <field name="name">Košický kraj</field>
+    </record>
+    <record id="state_sk_ni" model="res.country.state">
+        <field name="country_id" ref="base.sk" />
+        <field name="code">NI</field>
+        <field name="name">Nitriansky kraj</field>
+    </record>
+    <record id="state_sk_pv" model="res.country.state">
+        <field name="country_id" ref="base.sk" />
+        <field name="code">PV</field>
+        <field name="name">Prešovský kraj</field>
+    </record>
+    <record id="state_sk_ta" model="res.country.state">
+        <field name="country_id" ref="base.sk" />
+        <field name="code">TA</field>
+        <field name="name">Trnavský kraj</field>
+    </record>
+    <record id="state_sk_tc" model="res.country.state">
+        <field name="country_id" ref="base.sk" />
+        <field name="code">TC</field>
+        <field name="name">Trenčiansky kraj</field>
+    </record>
+    <record id="state_sk_zi" model="res.country.state">
+        <field name="country_id" ref="base.sk" />
+        <field name="code">ZI</field>
+        <field name="name">Žilinský kraj</field>
+    </record>
+</odoo>
