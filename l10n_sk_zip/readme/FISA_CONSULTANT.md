@@ -50,7 +50,7 @@ The module **does not post journal entries** and does not touch accounts. The da
 | Slovak localities | **Cities** | name, postal code, country, region; loaded at install |
 | The 8 regions of Slovakia | the states of the country Slovakia, created by the module | the same on contacts, orders and AWBs; the field is called **State** |
 | City of the contact | the **City** field of the address, a list | Slovakia becomes a country with the city picked from a list |
-| Postal code of the contact | the standard ZIP field of the address | written `NNN NN`; a code typed without the space (`81101`) becomes `811 01` |
+| Postal code of the contact | the standard ZIP field of the address | written `NNN NN`; a code typed without the space (`81101`) becomes `811 01` when it has a single locality; a code shared by several localities (e.g. `94901`) stays as typed and only the region is filled in |
 
 Minimum demo data: a company contact in Slovakia, with the street filled in, without postal code, city
 and region.
@@ -103,7 +103,7 @@ the matching localities, each with its code.
 - **Find on screen:** ① the postal code `949 01`; ③ the filled-in region, *Nitriansky kraj (SK)*;
   ② `949 01` typed in the **City** field, and the list proposing *Lužianky (949 01)*,
   *Nitra (949 01)* and *Nitrianske Hrnčiarovce (949 01)*.
-- **Check:** the region is already filled in, so the contact can be saved; the city is picked from the
+- **Check:** the region is already filled in, so the contact can be saved (the code stays as typed: it is rewritten as `NNN NN` only when the locality is unique); the city is picked from the
   list. On a contact that already has the locality name typed (e.g. a contact imported with the city
   *Žilina* and the code `010 01`, shared with *Mojš*), Odoo picks it by itself, ignoring accents and
   letter case.
