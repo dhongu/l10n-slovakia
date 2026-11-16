@@ -172,6 +172,10 @@ postal code that is not in the list.
 - [ ] A contact imported with the code `01001` and the city *Žilina* gets, after the action
       **Slovakia: set city from ZIP**, the code `010 01`, the city *Žilina* and the region
       *Žilinský kraj (SK)*.
+- [ ] At install, a Slovak contact created beforehand with a postal code is linked to its locality: directly on a
+      small database; on a large one, the scheduled action **Slovakia: link contacts to the city of their ZIP**
+      is active (**Settings → Technical → Scheduled Actions**, developer mode) and deactivates itself when
+      it has finished.
 - [ ] Contacts of other countries stay unchanged after the action.
 - [ ] (With `deltatech_delivery`) in **Carrier Details**, for a delivery to Slovakia, the postal code
       fills in the region, with no manual lookup.
