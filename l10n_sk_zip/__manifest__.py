@@ -19,6 +19,7 @@
         "data/ir_cron.xml",
     ],
     "post_init_hook": "post_init_hook",
+    "images": ["static/description/main_screenshot.png"],
     "installable": True,
     "maintainers": ["dhongu"],
 }
