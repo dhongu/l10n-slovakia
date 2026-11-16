@@ -2,5 +2,10 @@
   "title": "Slovakia - City from ZIP",
   "summary": "City and region from the Slovak postal code",
   "edition": "community",
-  "features": ["Slovak localities from GeoNames", "City and region from the PSČ", "Bulk link of existing contacts"]
+  "features": [
+    "Slovak localities from GeoNames",
+    "City and region from the PSČ",
+    "Bulk link of existing contacts"
+  ],
+  "flag": "sk"
 }
